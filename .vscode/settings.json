@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "libsolong.h": "c",
+        "get_next_line.h": "c"
+    }
+}
