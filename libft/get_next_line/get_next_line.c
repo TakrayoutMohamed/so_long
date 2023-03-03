@@ -6,7 +6,7 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:06:52 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/03 18:44:30 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:32:42 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,6 @@ static int	ft_strchr(char *s, char c)
 	}
 	return (0);
 }
-
-static	int	ft_strchr(char *s, char c)
-{
-	char	*str;
-
-	if (s)
-	{
-		str = s;
-		while (*str && *str != c)
-			str++;
-		if (*str == c)
-			return (1);
-	}
-	return (0);
-}
-
 
 char	*get_till_new_line(int fd, char *rest)
 {
