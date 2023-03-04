@@ -6,7 +6,7 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:30:30 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/03 23:49:30 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/04 17:17:21 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	get_nbr_line(char *filename)
 	nbr_line = 0;
 	fd = open(filename, O_RDONLY, 777);
 	if (fd == -1)
-		return (is_valid_map("there is an error while opening file"), -1);
+		return (error_str("there is an error while opening file"), -1);
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -61,7 +61,7 @@ char	*trim_and_free(char *str)
 	return (trimed_str);
 }
 
-/*convert a map from a file into a matrix */
+/*convert a map from a file into a matrix or array 2D*/
 char	**convert_map(char *filemap)
 {
 	int		fd_map;
@@ -72,7 +72,7 @@ char	**convert_map(char *filemap)
 	i = 0;
 	fd_map = open(filemap, O_RDONLY);
 	if (fd_map == -1)
-		return (is_valid_map("there is an error while opening the map file"), NULL);
+		return (error_str("an error while opening the file of map"), NULL);
 	matrix = (char **) malloc(sizeof(char *) * get_nbr_line(filemap) + 1);
 	if (!matrix)
 		return (close(fd_map), NULL);

@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   error_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 20:56:19 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/04 22:13:24 by mohtakra         ###   ########.fr       */
+/*   Created: 2023/03/02 19:11:56 by mohtakra          #+#    #+#             */
+/*   Updated: 2023/03/04 17:16:15 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libsolong.h"
+#include "./../libsolong.h"
 
-int main(int argc, char **argv)
+int	error_str(char *str)
 {
-	char	**map;
-
-	if (argc != 2)
-	{
-		error_str("there is an error");
-		return (0);
-	}
-	else
-	{
-		map = convert_map(argv[1]);
-		
-	}
+	ft_putstr_fd(str, 1);//you need to use your own printf
 	return (0);
 }
