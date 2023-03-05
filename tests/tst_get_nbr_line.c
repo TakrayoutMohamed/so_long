@@ -1,4 +1,4 @@
-#include "./../so_long_utils.c"
+#include "./../so_long_utils/so_long_utils.c"
 
 int main(void)
 {

@@ -6,11 +6,11 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:30:30 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/04 17:17:21 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/06 00:50:12 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libsolong.h"
+#include "./../libsolong.h"
 
 /*this function returns the number of lines in a file*/
 int	get_nbr_line(char *filename)
@@ -72,7 +72,7 @@ char	**convert_map(char *filemap)
 	i = 0;
 	fd_map = open(filemap, O_RDONLY);
 	if (fd_map == -1)
-		return (error_str("an error while opening the file of map"), NULL);
+		return (error_str("an error while opening the file of map"), exit(1), NULL);
 	matrix = (char **) malloc(sizeof(char *) * get_nbr_line(filemap) + 1);
 	if (!matrix)
 		return (close(fd_map), NULL);

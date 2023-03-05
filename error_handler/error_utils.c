@@ -6,7 +6,7 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 19:11:56 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/04 17:16:15 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/05 16:44:45 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	error_str(char *str)
 {
-	ft_putstr_fd(str, 1);//you need to use your own printf
+	ft_putstr_fd(str, 1);
 	return (0);
 }
