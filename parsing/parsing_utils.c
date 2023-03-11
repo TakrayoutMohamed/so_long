@@ -6,7 +6,7 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:30:39 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/06 00:46:27 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:28:17 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,17 +145,21 @@ int	has_collectible(char **map)
 /*return true if the map has only chars 0,1,C,E,P*/
 int	has_acceptable_chars(char **map)
 {
-	while (*map)
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
 	{
-		
-		while (**map)
+		j = 0;
+		while (map[i][j])
 		{
-			if (**map != '0' && **map != '1')
-				if (**map != 'C' && **map != 'E' && **map != 'P')
+			if (map[i][j] != '0' && map[i][j] != '1')
+				if (map[i][j] != 'C' && map[i][j] != 'E' && map[i][j] != 'P')
 					return (0);
-			(*map)++;
+			j++;
 		}
-		map++;
+		i++;
 	}
 	return (1);
 }
@@ -163,5 +167,18 @@ int	has_acceptable_chars(char **map)
 /*return true if the player had a valid path to all the C , E*/
 int	has_valid_path(char **map)
 {
+	while (*map++);
+	return (1);
+}
+
+/*return if the map is valid or not*/
+int	is_valid_map(char **map)
+{
+	if (!is_rectangle(map) || !is_surrounded(map))
+		return (0);
+	if (!has_collectible(map) || !has_exit(map) || !has_space(map) || !has_player(map))
+		return (0);
+	if (has_dup_ep(map) || !has_acceptable_chars(map) || !has_valid_path(map))
+		return (0);
 	return (1);
 }

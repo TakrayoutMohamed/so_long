@@ -3,6 +3,8 @@
         "stdio.h": "c",
         "libsolong.h": "c",
         "get_next_line.h": "c",
-        "libparsing.h": "c"
+        "libparsing.h": "c",
+        "libft.h": "c",
+        "libgraphic.h": "c"
     }
 }

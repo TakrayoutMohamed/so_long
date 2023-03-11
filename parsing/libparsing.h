@@ -6,7 +6,7 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:30:47 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/06 00:43:00 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:44:32 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@
 	int	has_valid_path(char **map);
 	int	has_acceptable_chars(char **map);
 	int	is_ber_file(char *filename);
+	int	is_valid_map(char **map);
 
 #endif

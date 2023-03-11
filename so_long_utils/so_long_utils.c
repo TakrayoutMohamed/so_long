@@ -6,7 +6,7 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:30:30 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/06 00:50:12 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/09 21:31:13 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,10 @@ char	**convert_map(char *filemap)
 	while (i < get_nbr_line(filemap))
 	{
 		line = get_next_line(fd_map);
-		line = trim_and_free(line);
-		matrix[i] = (char *)malloc(sizeof(char) * ft_strlen(line) + 1);
+		matrix[i] = trim_and_free(line);
 		if (!matrix[i])
 			return (free_matrix(matrix), free(line), NULL);
-		ft_strlcpy(matrix[i++], line, ft_strlen(line) + 1);
-		free(line);
+		i++;
 	}
 	matrix[i] = NULL;
 	return (close(fd_map), matrix);

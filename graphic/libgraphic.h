@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libsolong.h                                        :+:      :+:    :+:   */
+/*   libgraphic.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 19:12:30 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/09 22:44:44 by mohtakra         ###   ########.fr       */
+/*   Created: 2023/03/09 22:32:54 by mohtakra          #+#    #+#             */
+/*   Updated: 2023/03/11 01:34:38 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBSOLONG_H
-# define LIBSOLONG_H
+#ifndef LIBGRAPHIC_H
+# define LIBGRAPHIC_H
 # include <stdio.h>
 # include <stdlib.h>
-# include <math.h>
-# include "./libft/get_next_line/get_next_line.h"
-# include "./libft/libft/libft.h"
-# include "./parsing/libparsing.h"
-# include "./graphic/libgraphic.h"
+# include "./../libft/libft/libft.h"
+# include "./../libsolong.h"
+# include <mlx.h>
+	typedef struct s_data
+	{
+		void	*win;
+		void	*mlx;
+		void	*img;
+	} t_data;
 
-	/*the handle error functions*/
-	int		error_str(char *str);
-	/*the handle error functions*/
-	int		get_nbr_line(char *filename);
-	void	free_matrix(char **matrix);
-	char	**convert_map(char *filemap);
+	typedef struct s_img
+	{
+		int		width;
+		int		height;
+		char	*path;
+	} t_img;
 
+	void	run_graphics(char **map);
+	void	map_to_graphic(char **map, t_data *data);
 #endif
