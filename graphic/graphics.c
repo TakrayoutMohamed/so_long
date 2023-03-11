@@ -6,7 +6,7 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 21:50:32 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/11 01:39:39 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/11 19:43:45 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ void	run_graphics(char **map)
 		exit(1);
 	}
 	map_to_graphic(map, &data);
+	mlx_key_hook(data.win, handle_keypress, &data);
 	mlx_loop(data.mlx);
 }

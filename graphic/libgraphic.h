@@ -6,7 +6,7 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 22:32:54 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/11 01:34:38 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/11 23:04:44 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,6 @@
 
 	void	run_graphics(char **map);
 	void	map_to_graphic(char **map, t_data *data);
+	int		handle_keypress(int keysym, t_data *data);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: mohtakra <mohtakra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 22:45:30 by mohtakra          #+#    #+#             */
-/*   Updated: 2023/03/11 01:42:49 by mohtakra         ###   ########.fr       */
+/*   Updated: 2023/03/11 23:05:55 by mohtakra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void    setImage(char *str, int width, int height, t_img *img)
 	img->width = width;
 }
 
+/*put the current image to the windows */
 void	put_img_to_window(char c, t_data *data, int x, int y)
 {
 	t_img   character;
@@ -43,10 +44,11 @@ void	put_img_to_window(char c, t_data *data, int x, int y)
 	mlx_put_image_to_window(data->mlx, data->win, data->img, x * 32, 32 * y);
 }
 
-void	put_character_to_window(char **map, t_data *data)
+/*convert the map into graphics depend on the char type*/
+void	map_to_graphic(char **map, t_data *data)
 {
-	int     j;
-	int     i;
+	int	j;
+	int	i;
 
 	i = 0;
 	while (map[i])
@@ -61,7 +63,10 @@ void	put_character_to_window(char **map, t_data *data)
 	}
 }
 
-void	map_to_graphic(char **map, t_data *data)
+/*this one used to control the key press */
+int	handle_keypress(int key, t_data *data)
 {
-	put_character_to_window(map, data);
+	data->img = data->img;
+	printf("the key pressed : %d\n",key);
+	return (0);
 }
